@@ -56,7 +56,18 @@ application-serice                  LoadBalancer            10.0.179.153        
 
 
 
+7. Display detailed information about the Service
 
+
+[root@172-0-1-4 kube]# kubectl describe services application-serice
+
+
+8. In the preceding output, you can see that the service has several endpoints. these are internal addresses of the pods that are running the tomcat sample application. To verify these are pod addresses
+
+[root@172-0-1-4 kube]# kubectl get pods --output=wide
+
+
+9. User LoadBalance IP and port to access application
 
 
 
