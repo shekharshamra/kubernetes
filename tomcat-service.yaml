@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: tomcat-load-balancer-example
+  name: AppServer
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: tomcat-load-balancer-example
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: tomcat-load-balancer-example
+    spec:
+      containers:
+      - image: csharma4u/apachetomcat:v1.0
+        name: AppServer
+        ports:
+        - containerPort: 8080
