@@ -1,2 +1,3 @@
-FROM tomcat:jdk8-openjdk-slim
-COPY sample.war /usr/local/tomcat/webapps
+FROM tomee:latest
+COPY sample.war /usr/local/tomee/webapps
+
